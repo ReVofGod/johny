@@ -5,213 +5,441 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomóż Johny'emu - Zbiórka na Leczenie</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="hero-section">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="profile-container">
-                <div class="profile-image">
-                    <i class="fas fa-dog"></i>
-                </div>
-                <h1 class="hero-title">Pomóż Johny'emu</h1>
-                <p class="hero-subtitle">Nasz ukochany pies potrzebuje pomocy</p>
-            </div>
+    <!-- Animated Background -->
+    <div class="bg-canvas">
+        <div class="floating-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
         </div>
     </div>
 
-    <div class="main-container">
-        <div class="content-grid">
-            <div class="story-section">
-                <div class="section-card">
-                    <h2><i class="fas fa-heart"></i> Historia Johny'ego</h2>
-                    <div class="story-content">
-                        <p>Poznajcie Johnego – śnieżnobiałego psiaka, którego nie da się pomylić z żadnym innym. Dlaczego? Bo Johny ma zez – rozbieżny jak jego codzienne przygody. Jedno oko patrzy w miskę, drugie – w niebo, ale serce ma zawsze tam, gdzie jego człowiek.
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-content">
+            <div class="nav-logo">
+                <i class="fas fa-heart"></i>
+                <span>Johny's Fund</span>
+            </div>
+            <div class="nav-links">
+                <a href="#story" class="nav-link">Historia</a>
+                <a href="#progress" class="nav-link">Postęp</a>
+                <a href="#gallery" class="nav-link">Galeria</a>
+                <a href="#donate" class="nav-link donate-nav">Wspomóż</a>
+            </div>
+        </div>
+    </nav>
 
-Johny trafił do mnie przypadkiem – przemoczony, głodny, zdezorientowany... i trochę niezdarny. Z początku myślałem, że się potyka ze zmęczenia – okazało się, że jego problem ze wzrokiem to coś więcej niż urokliwa wada. Diagnoza: zez pourazowy, pogarszający się stan oczu, wymagający leczenia i kontroli u specjalisty.
-                        
-                        <div class="medical-info">
-                            <h3><i class="fas fa-stethoscope"></i> Stan zdrowia</h3>
-                            <ul>
-                                <li>Zdiagnozowana choroba: Zez pourazowy</li>
-                                <li>Wymagane leczenie: Operacja + rehabilitacja</li>
-                                <li>Szacowany koszt: 30,000 $</li>
-                                <li>Czas leczenia: 3-6 miesięcy</li>
-                            </ul>
-                        </div>
-
-                        <p>Bez tej operacji Johny będzie cierpiał i stopniowo traci możliwość normalnego poruszania się. Jako rodzina robimy wszystko co możemy, ale koszty przekraczają nasze możliwości finansowe.</p>
-                    </div>
-                </div>
-
-                <div class="section-card">
-                    <h2><i class="fas fa-images"></i> Galeria zdjęć</h2>
-                    <div class="photo-gallery">
-                        <div class="photo-item">
-                            <img src="ddd.png" alt="Johny w parku">
-                            <p>biedny johny</p>
-                        </div>
-                        <div class="photo-item">
-                            
-                            <p></p>
-                        </div>
-                        <div class="photo-item">
-                        
-                            <p></p>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-particles" id="particles"></div>
+        
+        <div class="hero-content">
+            <div class="hero-profile">
+                <div class="profile-ring">
+                    <div class="profile-image">
+                        <div class="dog-avatar">
+                            <i class="fas fa-dog"></i>
                         </div>
                     </div>
                 </div>
+                <div class="profile-status">
+                    <div class="status-dot"></div>
+                    <span>Potrzebuje pomocy</span>
+                </div>
+            </div>
+            
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-main">Pomóż</span>
+                    <span class="title-accent">Johny'emu</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Nasz ukochany pies z unikalnym spojrzeniem na świat potrzebuje naszej pomocy
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" id="heroAmount">12,320</div>
+                        <div class="stat-label">$ zebrane</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number">47</div>
+                        <div class="stat-label">darczyńców</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number">18</div>
+                        <div class="stat-label">dni pozostało</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-actions">
+                <button class="cta-button primary" onclick="scrollToSection('donate')">
+                    <span class="cta-text">Wesprzyj teraz</span>
+                    <div class="cta-effect"></div>
+                </button>
+                <button class="cta-button secondary" onclick="scrollToSection('story')">
+                    <span class="cta-text">Poznaj historię</span>
+                </button>
+            </div>
+        </div>
 
-                <div class="section-card">
-                    <h2><i class="fas fa-bullhorn"></i> Aktualizacje</h2>
-                    <div class="updates-timeline">
-                        <div class="update-item">
-                            <div class="update-date">30 maja 2025</div>
-                            <div class="update-content">
-                                <h4>Diagnoza potwierdzona</h4>
-                                <p>Otrzymaliśmy wyniki dodatkowych badań. Lekarz potwierdził konieczność operacji.</p>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <div class="scroll-text">Przewiń w dół</div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Progress Section -->
+        <section id="progress" class="progress-section">
+            <div class="container">
+                <div class="progress-card">
+                    <div class="progress-header">
+                        <h2>Postęp zbiórki</h2>
+                        <div class="progress-amount">
+                            <span class="current-amount" id="currentAmount">12,320</span>
+                            <span class="target-amount">/ 30,000 $</span>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-visual">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill">
+                                <div class="progress-glow"></div>
                             </div>
                         </div>
-                        <div class="update-item">
-                            <div class="update-date">28 maja 2025</div>
-                            <div class="update-content">
-                                <h4>Pierwsze badania</h4>
-                                <p>Johny przeszedł pierwsze badania diagnostyczne. Czekamy na pełne wyniki.</p>
-                            </div>
+                        <div class="progress-percentage" id="progressPercentage">41%</div>
+                    </div>
+                    
+                    <div class="progress-details">
+                        <div class="detail-item">
+                            <i class="fas fa-clock"></i>
+                            <span>18 dni pozostało</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-users"></i>
+                            <span>47 wspaniałych darczyńców</span>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-target"></i>
+                            <span>17,680 $ do celu</span>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="donation-sidebar">
-                <div class="progress-card">
-                    <h3><i class="fas fa-target"></i> Cel zbiórki</h3>
-                    <div class="progress-container">
-                        <div class="progress-bar">
-                            <div class="progress-fill" id="progressFill"></div>
-                            <div class="progress-text">
-                                <span id="currentAmount">10,000</span> $ z 30,000 $
+        <div class="content-layout">
+            <!-- Story Section -->
+            <section id="story" class="story-section">
+                <div class="story-card">
+                    <div class="card-header">
+                        <div class="header-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h2>Historia Johny'ego</h2>
+                    </div>
+                    
+                    <div class="story-content">
+                        <div class="story-intro">
+                            <p>Poznajcie Johnego – śnieżnobiałego psiaka o wyjątkowym spojrzeniu na świat. Jego historia to opowieść o miłości, determinacji i nadziei.</p>
+                        </div>
+                        
+                        <div class="story-text">
+                            <p>Johny ma zez – rozbieżny jak jego codzienne przygody. Jedno oko patrzy w miskę, drugie w niebo, ale serce ma zawsze tam, gdzie jego człowiek. To nie tylko urocza cecha charakteru, ale poważny problem zdrowotny wymagający natychmiastowej interwencji.</p>
+                            
+                            <p>Trafił do mnie przemoczony, głodny i zdezorientowany. Z początku myślałem, że potyka się ze zmęczenia – okazało się, że jego problem ze wzrokiem to coś więcej niż charakterystyczna wada.</p>
+                        </div>
+                        
+                        <div class="medical-card">
+                            <div class="medical-header">
+                                <i class="fas fa-stethoscope"></i>
+                                <h3>Diagnoza medyczna</h3>
+                            </div>
+                            <div class="medical-grid">
+                                <div class="medical-item">
+                                    <span class="medical-label">Choroba</span>
+                                    <span class="medical-value">Zez pourazowy</span>
+                                </div>
+                                <div class="medical-item">
+                                    <span class="medical-label">Leczenie</span>
+                                    <span class="medical-value">Operacja + rehabilitacja</span>
+                                </div>
+                                <div class="medical-item">
+                                    <span class="medical-label">Koszt</span>
+                                    <span class="medical-value highlight">30,000 $</span>
+                                </div>
+                                <div class="medical-item">
+                                    <span class="medical-label">Czas</span>
+                                    <span class="medical-value">3-6 miesięcy</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="progress-percentage" id="progressPercentage">33%</div>
-                    </div>
-                    
-                    <div class="stats-grid">
-                        <div class="stat-item">
-                            <div class="stat-number" id="donorCount">47</div>
-                            <div class="stat-label">Darczyńców</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">18</div>
-                            <div class="stat-label">Dni pozostało</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">17,400</div>
-                            <div class="stat-label">$ pozostało</div>
+                        
+                        <div class="story-conclusion">
+                            <p>Bez tej operacji Johny będzie cierpiał i stopniowo utraci możliwość normalnego funkcjonowania. Jako rodzina robimy wszystko co możemy, ale koszty przekraczają nasze możliwości finansowe.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="donation-amounts">
-                    <h3><i class="fas fa-hand-holding-heart"></i> Wspomóż Johny'ego</h3>
-                    <div class="amount-buttons">
-                        <button class="amount-btn" data-amount="50">50 $</button>
-                        <button class="amount-btn" data-amount="100">100 $</button>
-                        <button class="amount-btn" data-amount="200">200 $</button>
-                        <button class="amount-btn" data-amount="500">500 $</button>
+                <!-- Gallery Section -->
+                <div id="gallery" class="gallery-card">
+                    <div class="card-header">
+                        <div class="header-icon">
+                            <i class="fas fa-images"></i>
+                        </div>
+                        <h2>Galeria Johny'ego</h2>
                     </div>
                     
-                    <div class="custom-amount">
-                        <input type="number" id="customAmount" placeholder="Inna kwota" min="1">
-                        <button class="donate-btn" id="donateBtn">
+                    <div class="gallery-grid">
+                        <div class="gallery-item main-photo">
+                            <img src="ddd.png" alt="Johny - nasz ukochany pies" class="gallery-image">
+                            <div class="photo-overlay">
+                                <div class="photo-info">
+                                    <h4>Nasz bohater</h4>
+                                    <p>Johny mimo problemów ze wzrokiem zachowuje optymizm</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-camera"></i>
+                                <span>Podczas zabawy</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-heart"></i>
+                                <span>Z rodziną</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <div class="photo-placeholder">
+                                <i class="fas fa-paw"></i>
+                                <span>Na spacerze</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Updates Section -->
+                <div class="updates-card">
+                    <div class="card-header">
+                        <div class="header-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <h2>Najnowsze aktualizacje</h2>
+                    </div>
+                    
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">30 maja 2025</div>
+                                <h4>Diagnoza potwierdzona</h4>
+                                <p>Otrzymaliśmy wyniki dodatkowych badań. Lekarz potwierdził konieczność operacji i przedstawił szczegółowy plan leczenia.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">28 maja 2025</div>
+                                <h4>Pierwsze badania</h4>
+                                <p>Johny przeszedł pierwsze badania diagnostyczne. Był bardzo dzielny podczas całej procedury.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-date">25 maja 2025</div>
+                                <h4>Rozpoczęcie zbiórki</h4>
+                                <p>Uruchomiliśmy zbiórkę na leczenie Johny'ego. Dziękujemy za każde wsparcie!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Donation Sidebar -->
+            <aside id="donate" class="donation-sidebar">
+                <div class="donation-card">
+                    <div class="donation-header">
+                        <h3>Wesprzyj Johny'ego</h3>
+                        <div class="urgency-badge">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Pilne</span>
+                        </div>
+                    </div>
+                    
+                    <div class="amount-selector">
+                        <div class="amount-grid">
+                            <button class="amount-btn" data-amount="50">50 $</button>
+                            <button class="amount-btn" data-amount="100">100 $</button>
+                            <button class="amount-btn selected" data-amount="200">200 $</button>
+                            <button class="amount-btn" data-amount="500">500 $</button>
+                        </div>
+                        
+                        <div class="custom-amount">
+                            <input type="number" id="customAmount" placeholder="Inna kwota" min="1">
+                            <div class="currency-label">$</div>
+                        </div>
+                    </div>
+                    
+                    <button class="donate-button" id="donateBtn">
+                        <div class="donate-content">
                             <i class="fas fa-heart"></i>
-                            Wesprzyj teraz
-                        </button>
+                            <span>Wpłać teraz</span>
+                        </div>
+                        <div class="donate-effect"></div>
+                    </button>
+                    
+                    <div class="payment-security">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Bezpieczne płatności SSL</span>
                     </div>
                 </div>
 
+                <!-- Recent Donations -->
                 <div class="recent-donations">
-                    <h3><i class="fas fa-users"></i> Ostatnie wpłaty</h3>
-                    <div class="donation-list">
+                    <h3>Ostatnie wpłaty</h3>
+                    <div class="donations-list">
                         <div class="donation-item">
                             <div class="donor-avatar">
-                                <i class="fas fa-user"></i>
+                                <div class="avatar-img">A</div>
+                                <div class="donor-status online"></div>
                             </div>
-                            <div class="donation-details">
-                                <div class="donor-name">Makembe</div>
-                                <div class="donation-amount">2000 $</div>
+                            <div class="donation-info">
+                                <div class="donor-name">Anna K.</div>
+                                <div class="donation-amount">200 $</div>
                                 <div class="donation-time">2 godziny temu</div>
                             </div>
+                            <div class="donation-heart">
+                                <i class="fas fa-heart"></i>
+                            </div>
                         </div>
+                        
                         <div class="donation-item">
                             <div class="donor-avatar">
-                                <i class="fas fa-user"></i>
+                                <div class="avatar-img">M</div>
+                                <div class="donor-status"></div>
                             </div>
-                            <div class="donation-details">
-                                <div class="donor-name">Jakob Soul</div>
+                            <div class="donation-info">
+                                <div class="donor-name">Marek Z.</div>
                                 <div class="donation-amount">150 $</div>
                                 <div class="donation-time">5 godzin temu</div>
                             </div>
+                            <div class="donation-heart">
+                                <i class="fas fa-heart"></i>
+                            </div>
                         </div>
+                        
                         <div class="donation-item">
                             <div class="donor-avatar">
-                                <i class="fas fa-user"></i>
+                                <div class="avatar-img">K</div>
+                                <div class="donor-status"></div>
                             </div>
-                            <div class="donation-details">
-                                <div class="donor-name">Jan tarantino</div>
+                            <div class="donation-info">
+                                <div class="donor-name">Katarzyna M.</div>
                                 <div class="donation-amount">100 $</div>
                                 <div class="donation-time">1 dzień temu</div>
                             </div>
+                            <div class="donation-heart">
+                                <i class="fas fa-heart"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
 
+                <!-- Share Section -->
                 <div class="share-section">
-                    <h3><i class="fas fa-share"></i> Podziel się</h3>
+                    <h3>Podziel się</h3>
                     <div class="share-buttons">
-                        <button class="share-btn facebook">
+                        <button class="share-btn facebook" data-platform="facebook">
                             <i class="fab fa-facebook-f"></i>
-                            Facebook
                         </button>
-                        <button class="share-btn twitter">
+                        <button class="share-btn twitter" data-platform="twitter">
                             <i class="fab fa-twitter"></i>
-                            Twitter
                         </button>
-                        <button class="share-btn whatsapp">
+                        <button class="share-btn whatsapp" data-platform="whatsapp">
                             <i class="fab fa-whatsapp"></i>
-                            WhatsApp
+                        </button>
+                        <button class="share-btn instagram" data-platform="instagram">
+                            <i class="fab fa-instagram"></i>
                         </button>
                     </div>
                 </div>
-            </div>
+            </aside>
         </div>
-    </div>
+    </main>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2025 Zbiórka dla Johny'ego. Stworzone z ❤️ dla naszego ukochanego psa.</p>
-            <div class="footer-links">
-                <a href="#"><i class="fas fa-shield-alt"></i> Bezpieczeństwo</a>
-                <a href="#"><i class="fas fa-envelope"></i> Kontakt</a>
-                <a href="#"><i class="fas fa-question-circle"></i> FAQ</a>
+            <div class="footer-main">
+                <div class="footer-logo">
+                    <i class="fas fa-heart"></i>
+                    <span>Johny's Fund</span>
+                </div>
+                <p>Każda pomoc się liczy. Dziękujemy za wsparcie w leczeniu naszego ukochanego Johny'ego.</p>
             </div>
+            
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Pomoc</h4>
+                    <a href="#"><i class="fas fa-shield-alt"></i> Bezpieczeństwo</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> FAQ</a>
+                    <a href="#"><i class="fas fa-phone"></i> Kontakt</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Informacje</h4>
+                    <a href="#"><i class="fas fa-file-alt"></i> Regulamin</a>
+                    <a href="#"><i class="fas fa-user-shield"></i> Prywatność</a>
+                    <a href="#"><i class="fas fa-heart"></i> O nas</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Zbiórka dla Johny'ego. Stworzone z ❤️ dla naszego ukochanego psa.</p>
         </div>
     </footer>
 
     <script>
-        // Interactive progress bar animation
+        // Particle system
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 15 + 's';
+                particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Progress animation
         function animateProgress() {
-            const progressFill = document.getElementById('progressFill');
             const currentAmount = 12320;
             const targetAmount = 30000;
             const percentage = (currentAmount / targetAmount) * 100;
             
-            progressFill.style.width = percentage + '%';
-            document.getElementById('progressPercentage').textContent = Math.round(percentage) + '%';
+            setTimeout(() => {
+                document.getElementById('progressFill').style.width = percentage + '%';
+                document.getElementById('progressPercentage').textContent = Math.round(percentage) + '%';
+            }, 1000);
         }
 
-        // Donation amount selection
+        // Amount selection
         document.querySelectorAll('.amount-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
@@ -220,79 +448,99 @@ Johny trafił do mnie przypadkiem – przemoczony, głodny, zdezorientowany... i
             });
         });
 
-        // Custom amount input
+        // Custom amount handling
         document.getElementById('customAmount').addEventListener('input', function() {
             document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
         });
 
-        // Donate button animation
+        // Donate button
         document.getElementById('donateBtn').addEventListener('click', function() {
-            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Przetwarzanie...';
+            const button = this;
+            button.classList.add('processing');
+            button.querySelector('span').textContent = 'Przetwarzanie...';
+            button.querySelector('i').className = 'fas fa-spinner fa-spin';
+            
             setTimeout(() => {
-                this.innerHTML = '<i class="fas fa-check"></i> Dziękujemy!';
-                this.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+                button.classList.remove('processing');
+                button.classList.add('success');
+                button.querySelector('span').textContent = 'Dziękujemy!';
+                button.querySelector('i').className = 'fas fa-check';
             }, 2000);
+            
             setTimeout(() => {
-                this.innerHTML = '<i class="fas fa-heart"></i> Wesprzyj teraz';
-                this.style.background = 'linear-gradient(135deg, #ff6b6b, #ee5a24)';
+                button.classList.remove('success');
+                button.querySelector('span').textContent = 'Wpłać teraz';
+                button.querySelector('i').className = 'fas fa-heart';
             }, 4000);
+        });
+
+        // Smooth scroll
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Navigation scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.nav-bar');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
         });
 
         // Share buttons
         document.querySelectorAll('.share-btn').forEach(btn => {
             btn.addEventListener('click', function() {
-                this.style.transform = 'scale(0.95)';
+                this.style.transform = 'scale(0.9)';
                 setTimeout(() => {
                     this.style.transform = 'scale(1)';
                 }, 150);
             });
         });
 
-        // Initialize animations when page loads
-        window.addEventListener('load', function() {
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            createParticles();
             setTimeout(animateProgress, 500);
         });
 
-        // Add floating hearts animation
-        function createFloatingHeart() {
-            const heart = document.createElement('div');
-            heart.innerHTML = '❤️';
-            heart.style.position = 'fixed';
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
-            heart.className = 'floating-heart';
-            document.body.appendChild(heart);
-            
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
+        // Counter animation for hero stats
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString();
+            }, 20);
         }
 
-        // Create floating hearts periodically
-        setInterval(createFloatingHeart, 3000);
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.story-card, .gallery-card, .updates-card, .donation-card').forEach(el => {
+                observer.observe(el);
+            });
+        });
     </script>
-
-    <style>
-        @keyframes float-up {
-            0% {
-                bottom: -10vh;
-                opacity: 1;
-                transform: translateX(0px) rotate(0deg);
-            }
-            100% {
-                bottom: 100vh;
-                opacity: 0;
-                transform: translateX(100px) rotate(360deg);
-            }
-        }
-
-        .floating-heart {
-            position: fixed;
-            font-size: 24px;
-            z-index: 1000;
-            pointer-events: none;
-            animation: float-up linear;
-        }
-    </style>
 </body>
 </html>
